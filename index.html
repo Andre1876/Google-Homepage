@@ -6,165 +6,157 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andre Google Home Page</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style.css">
   <style>
-    /* Internal Styles for Convenience */
-
-    body {
-      margin: 0;
+    /* General Reset */
+    * {
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    /* Wrapper */
     .wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex-grow: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 60px;
+      /* Space below fixed header */
+      min-height: calc(100vh - 40px);
     }
 
+    /* Navigation Styles */
     nav {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 10px 20px;
-      background-color: #f9f9f9;
-      border-bottom: 1px solid #e0e0e0;
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
+      background-color: #fff;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      /* Optional shadow */
     }
 
     nav ul {
-      display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li {
-      margin: 0 10px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #555;
-      font-size: 14px;
-    }
-
-    .sign-in {
-      border: 1px solid #4285f4;
-      background-color: white;
-      color: #4285f4;
-      padding: 5px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .logo-container {
-      margin: 30px 0;
-    }
-
-    .logo {
-      width: 200px;
-    }
-
-    .search-container {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
-    .search {
-      display: flex;
-      align-items: center;
-      border: 1px solid #dcdcdc;
-      padding: 5px 15px;
-      border-radius: 25px;
-      width: 400px;
-      max-width: 80%;
-    }
-
-    .search img {
-      margin-right: 10px;
-    }
-
-    .search input {
-      border: none;
-      outline: none;
-      width: 100%;
-    }
-
-    .btn-container {
-      margin: 20px 0;
+      list-style-type: none;
       display: flex;
       gap: 10px;
     }
 
-    .btn {
-      background-color: #f2f2f2;
-      border: 1px solid #dcdcdc;
-      padding: 10px 20px;
-      border-radius: 5px;
+    nav a,
+    footer a {
+      text-decoration: none;
+      color: #000;
+      opacity: 0.75;
+      padding: 0.5em;
+      font-size: 13px;
+    }
+
+    nav a:hover,
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sign-In Button */
+    .sign-in {
+      font-weight: bold;
+      font-size: 13px;
+      border: 1px solid #4285f4;
+      background: linear-gradient(to bottom, #4387fd, #4683ea);
+      color: white;
       cursor: pointer;
-      font-size: 14px;
+      border-radius: 2px;
+      padding: 5px 10px;
+      margin-left: 10px;
+    }
+
+    /* Google Logo Styles */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 85px;
+    }
+
+    .logo {
+      width: 272px;
+    }
+
+    /* Search Container */
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .search {
+      border: 1px solid #e4e4e4;
+      box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+      max-width: 550px;
+      height: 40px;
+      border-radius: 2px;
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    input {
+      line-height: 34px;
+      width: 100%;
+      font-size: 16px;
+      border: none;
+      outline: none;
+    }
+
+    /* Mic Icon */
+    .search img {
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* Buttons */
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      color: #757575;
+      padding: 10px 20px;
+      background-color: #f2f2f2;
+      border: 1px solid #e4e4e4;
+      border-radius: 2px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     .btn:hover {
-      background-color: #e0e0e0;
+      background-color: #e8e8e8;
     }
 
+    /* Footer Styles */
     footer {
-      background-color: #f9f9f9;
-      border-top: 1px solid #e0e0e0;
-      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      padding: 10px 20px;
+      background: #f2f2f2;
+      border-top: 1px solid #e4e4e4;
     }
 
     footer ul {
+      list-style-type: none;
       display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    footer ul li {
-      margin: 0 10px;
-    }
-
-    footer ul li a {
-      text-decoration: none;
-      color: #555;
-      font-size: 12px;
-    }
-
-    @media (max-width: 600px) {
-      .search {
-        width: 300px;
-      }
-
-      nav ul, footer ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .btn-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-      }
+      gap: 15px;
     }
   </style>
 </head>
 
 <body>
   <div class="wrapper">
-    <!-- Navigation -->
     <nav>
       <ul>
         <li><a href="#">About</a></li>
@@ -173,32 +165,26 @@
       <ul>
         <li><a href="#">Gmail</a></li>
         <li><a href="#">Images</a></li>
-        <li><i class="fa fa-bars" aria-hidden="true"></i></li>
-        <li><button class="sign-in">Sign In</button></li>
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <button class="sign-in">Sign In</button>
       </ul>
     </nav>
 
-    <!-- Logo -->
     <div class="logo-container">
       <img class="logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo">
     </div>
-
-    <!-- Search Bar -->
     <div class="search-container">
       <div class="search">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1000px-Google_mic.svg.png" alt="Microphone Icon" height="20">
-        <input type="search" name="search-bar" placeholder="Search Google">
+        <img height="20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1000px-Google_mic.svg.png" alt="Mic Icon">
+        <input type="search" name="search-bar" placeholder="Search Google or type a URL">
       </div>
     </div>
-
-    <!-- Buttons -->
     <div class="btn-container">
       <button class="btn">Google Search</button>
       <button class="btn">I'm Feeling Lucky</button>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <ul>
       <li><a href="#">Advertising</a></li>
