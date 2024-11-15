@@ -3,154 +3,153 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andre Google Home Page</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    /* General Reset */
     * {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
     }
 
-    /* Wrapper */
     .wrapper {
-      max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
-      padding-top: 60px;
-      /* Space below fixed header */
       min-height: calc(100vh - 40px);
     }
 
-    /* Navigation Styles */
+    /* nav styles */
     nav {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      align-items: center; /* Ensure the items are vertically aligned at the top */
+      padding: 10px 25px;
       background-color: #fff;
-      z-index: 1000;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      /* Optional shadow */
     }
 
     nav ul {
-      list-style-type: none;
       display: flex;
-      gap: 10px;
+      padding: 0;
+      list-style-type: none;
     }
 
-    nav a,
-    footer a {
+    nav a {
       text-decoration: none;
-      color: #000;
-      opacity: 0.75;
-      padding: 0.5em;
-      font-size: 13px;
+      padding: 10px 15px;
+      font-size: 16px;
+      color: #333;
+      margin-left: 10px;
+      transition: color 0.3s ease;
     }
 
-    nav a:hover,
-    footer a:hover {
-      text-decoration: underline;
+    nav a:hover {
+      color: #4285f4;
     }
 
-    /* Sign-In Button */
-    .sign-in {
+    nav .sign-in {
       font-weight: bold;
-      font-size: 13px;
+      font-size: 14px;
       border: 1px solid #4285f4;
-      background: linear-gradient(to bottom, #4387fd, #4683ea);
+      background: -webkit-linear-gradient(top, #4387fd, #4683ea);
       color: white;
       cursor: pointer;
       border-radius: 2px;
-      padding: 5px 10px;
-      margin-left: 10px;
+      padding: 8px 15px;
     }
 
-    /* Google Logo Styles */
+    /* Google logo styles */
     .logo-container {
       display: flex;
       justify-content: center;
-      margin-top: 85px;
+      margin-top: 50px;
     }
 
     .logo {
       width: 272px;
+      margin: auto;
     }
 
-    /* Search Container */
+    /* Search styles */
     .search-container {
       display: flex;
       justify-content: center;
-      margin: 20px 0;
+      margin-top: 20px;
     }
 
     .search {
       border: 1px solid #e4e4e4;
-      box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: 2px 2px 3px 1px #e4e4e4;
       max-width: 550px;
       height: 40px;
       border-radius: 2px;
       padding: 5px 10px;
-      display: flex;
-      align-items: center;
+      margin: auto;
     }
 
     input {
       line-height: 34px;
-      width: 100%;
+      width: 435px;
+      padding: 6px 6px 0px 16px;
       font-size: 16px;
       border: none;
+      height: 34px;
       outline: none;
     }
 
-    /* Mic Icon */
     .search img {
+      position: relative;
+      top: 05px;
+      right: -425px;
       cursor: pointer;
-      margin-left: 10px;
     }
 
-    /* Buttons */
+    /* Search button styles */
     .btn-container {
       display: flex;
       justify-content: center;
-      gap: 10px;
       margin-top: 20px;
     }
 
     .btn {
       color: #757575;
-      padding: 10px 20px;
+      margin-right: 5px;
+      padding: 0 15px;
+      height: 36px;
+      min-width: 50px;
+      text-align: center;
       background-color: #f2f2f2;
-      border: 1px solid #e4e4e4;
+      border: 1px solid #f2f2f2;
       border-radius: 2px;
       font-weight: bold;
       cursor: pointer;
     }
 
-    .btn:hover {
-      background-color: #e8e8e8;
-    }
-
-    /* Footer Styles */
+    /* Footer styles */
     footer {
       display: flex;
       justify-content: space-between;
-      padding: 10px 20px;
       background: #f2f2f2;
       border-top: 1px solid #e4e4e4;
+      line-height: 26px;
+      padding: 10px 25px;
     }
 
     footer ul {
       list-style-type: none;
+      padding: 0;
       display: flex;
-      gap: 15px;
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+
+    footer a {
+      font-size: 13px;
+      text-decoration: none;
+      color: #000;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -162,6 +161,7 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Store</a></li>
       </ul>
+
       <ul>
         <li><a href="#">Gmail</a></li>
         <li><a href="#">Images</a></li>
@@ -171,12 +171,12 @@
     </nav>
 
     <div class="logo-container">
-      <img class="logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo">
+      <img class="logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png">
     </div>
     <div class="search-container">
       <div class="search">
-        <img height="20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1000px-Google_mic.svg.png" alt="Mic Icon">
-        <input type="search" name="search-bar" placeholder="Search Google or type a URL">
+        <img height="20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1000px-Google_mic.svg.png">
+        <input type="search" name="search-bar">
       </div>
     </div>
     <div class="btn-container">
@@ -184,12 +184,12 @@
       <button class="btn">I'm Feeling Lucky</button>
     </div>
   </div>
-
   <footer>
     <ul>
       <li><a href="#">Advertising</a></li>
       <li><a href="#">Business</a></li>
     </ul>
+
     <ul>
       <li><a href="#">Privacy</a></li>
       <li><a href="#">Terms</a></li>
